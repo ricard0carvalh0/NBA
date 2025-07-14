@@ -2,10 +2,15 @@ CREATE OR REPLACE FUNCTION retornar_melhor_colocacao_draft(p_player_id int)
 RETURNS int
 STABLE               
 AS $$
+DECLARE
+    v_melhor_pick int;
 BEGIN
-   	SELECT MIN(overall_pick)               
+   	SELECT MIN(overall_pick)
+      INTO v_melhor_pick                    
       FROM norm_draft_history
     WHERE player_id = p_player_id;
+
+    RETURN v_melhor_pick; 
 END;
 $$ LANGUAGE plpgsql;
 
