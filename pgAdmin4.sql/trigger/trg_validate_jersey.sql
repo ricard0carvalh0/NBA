@@ -9,7 +9,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 CREATE TRIGGER trg_validate_jersey
-BEFORE INSERT OR UPDATE ON player_info
+BEFORE INSERT OR UPDATE ON norm_player_info
 FOR EACH ROW
 EXECUTE FUNCTION validate_jersey_number();
 
@@ -21,4 +21,4 @@ EXECUTE FUNCTION validate_jersey_number();
 --  INSERT INTO player_info (id, first_name, last_name, Jersey, position, team_id)
 --	VALUES(x, 'Pascal', 'Siakam', 100, 'PF', y)
 	
---	Retorna erro; Número da camisa inválido: deve estar entre 0 e 99 (inclusive 0, 00 e 99)
+--	Retorna erro: Número da camisa inválido: deve estar entre 0 e 99 (inclusive 0, 00 e 99)

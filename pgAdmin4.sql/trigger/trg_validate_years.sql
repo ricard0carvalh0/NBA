@@ -10,7 +10,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 CREATE TRIGGER trg_validate_years
-BEFORE INSERT OR UPDATE ON player_info
+BEFORE INSERT OR UPDATE ON norm_player_info
 FOR EACH ROW
 EXECUTE FUNCTION validate_player_years();
 

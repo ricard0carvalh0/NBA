@@ -5,7 +5,7 @@ SELECT
     p.first_name,
     p.last_name,
     p.rosterstatus
-FROM player_info p
+FROM norm_player_info p
 WHERE p.rosterstatus = 'Active';
 
 -- Documentação:
@@ -13,3 +13,5 @@ WHERE p.rosterstatus = 'Active';
 --  Além das informações exibidas, existe uma condição where e um INITCAP;
 --  O initicap serve para fazer a concatenação do primeiro e último nome do jogador;
 --  Já a condição é para justamente filtrar apenas jogadores a partir do rosterstatus presente na tabela player_info.
+
+-- Chamada: SELECT * FROM active_players_view;
